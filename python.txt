@@ -1,0 +1,229 @@
+Python:-
+Variable
+- Specific, case-sensitive
+- call up value through variable name
+ eg-  height = 1.79
+	weight = 68.7
+	
+in:	68.7 / 1.79 **2
+out:    21.4413
+
+in:	weight / height ** 2
+out:	21.4413
+
+in:	bmi = weight / height ** 2
+
+in:	bmi
+out:	21.4413
+
+myscript.py
+height = 1.79
+weight = 74.2
+bmi = weight / height ** 2 
+print(bmi)
+
+output: 23.1578
+
+To know the type of the bmi:-
+in: type(bmi)
+out: float
+
+Python type 2:-
+in: x = "body mass index"
+in: y = 'this works too'
+in: type(y)
+out: str
+in: z = True
+in: type(z)
+out: bool
+
+Python types 3:-
+in: 2 + 3
+out: 5
+in: 'ab' + 'cd'
+out: 'abcd'
+
+python datatypes:-
+1. float - real numbers
+2. int - integer numbers
+3. str - string, text
+4. bool - True, False
+
+- data science has many data points
+eg- height of entire family
+in: height1 = 1.73 
+in: height2 = 1.68
+in: height3 = 1.71
+in: height4 = 1.89
+-this is inconvenient
+* Python list[a, b, c]
+in: [1.73, 1.68, 1.71, 1.89]
+out: [1.73, 1.68, 1.71, 1.89]
+
+in: fam = [1.73, 1.68, 1.71, 1.89]
+in: fam
+out: [1.73, 1.68, 1.71, 1.89]
+-name a collection of values
+-contain any type
+-contain different types
+
+in: fam = ["liz", 1.73, "emma", 1.68, "mom", 1.71, "dad", 1.89]
+
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.89]
+
+in: fam2 = [["liz", 1.73], ["emma", 1.68], ["mom", 1.71], ["dad", 1.89]]
+
+in: fam2
+out: [['liz', 1.73], ['emma', 1.68], ['mom', 1.71], ['dad', 1.89]]
+
+*List type:-
+in: type(fam)
+out: list
+in: type(fam2)
+out: list
+- specific functionality
+- specific behavior
+
+Subsetting lists
+"zero based indexing"
+in: fam[3]
+out: 1.68
+in: fam[6]
+out: 'dad'
+
+negative index- -1 for last element, -2 for secondlast and so on...
+in: fam[-1]
+out: 1.89
+in: fam[-2]
+out: 'dad'
+
+List Slicing- 
+in: fam[3:5]
+out: [1.68, 'mom']
+because the ending index is not included in the output. [start : end] 
+inclusive : exclusive
+
+in: fam[1:4]
+out: [1.73, 'emma', 1.68]
+
+in: fam[:4] (gives output from index 0 to 3)
+out: ['liz', 1.73, 'emma', 1.68]
+
+in: fam[5:] (gives output from index 5 to last element)
+out: [1.71, 'dad', 1.89]
+
+*Manipulation lists:-
+1. change list elements
+2. add list elements
+3. remove list elements
+
+Changing list elements:-
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.89]
+
+replacing dad's height
+in: fam[7] = 1.86
+
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86]
+
+to change the name from liz to lisa:
+in: fam[0:2] = ["lisa", 1.74]
+in: fam
+out: ['lisa', 1.74, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86]
+
+adding and removing lists:-
+
+in: fam +  ["me", 1.79]
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86, 'me', 1.79]
+
+also can  be done as:
+fam_ext = fam + ["me", 1.79]
+
+to delete:-
+keyword is del-
+in: del(fam[2])
+in: fam
+out:['liz', 1.73, 1.68, 'mom', 1.71, 'dad', 1.86]
+in: del(fam[2])
+out:['liz', 1.73,'mom', 1.71, 'dad', 1.86]
+
+*Behind the scenes(1): how python works
+
+in: x= ["a","b","c"] /creates a list in memory named x
+in: y = x /the same list is also named y
+in: y[1] = "z" /y changes the index 1 element to "z", it will also make changes to the list x as they are the  same.
+
+in: x
+out: ["a", "z", "c"]
+in: y 
+out: ["a", "z", "c"]
+
+*Behind the scenes(2):-
+in: x = ["a", "b","c"]
+now, to copy all the elements of the list you can instead use---
+in: y = list(x) /it creates another list with the same elementa as of x
+or
+in: y = x[:]
+
+thus, by making changes to y, x will not be affected
+
+in: y[1] = "z"
+in: x
+out: ['a', 'b', 'c']
+
+*Functions:-
+-piece of reusable code
+-solves particular task
+-call function instead of writing code yourself
+
+--max function
+in: fam =n[1.73, 1.68, 1.71, 1.89]
+in: max(fam)
+out: 1.89
+
+or
+
+in:tallest = max(fam)
+in:tallest
+out: 1.89
+ 
+--round()function
+in:round(1.68, 1)
+out: 1.7
+in:round(1.68)
+out: 2
+in: help(round)//open up documentation
+
+*Built in functions:-
+max(), len() 
+methods - capitalize(), replace(), bit_length(), conjugate(), index(), count()
+
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86]
+in: fam.index("mom")
+out: 4
+in:fam.count(1.73) /counts no. of times it occured
+out: 1
+
+str methods:
+in: sister
+out: 'liz'
+in: sister.capitalize() /first letter becomes capital
+out: 'Liz'
+in: sister.replace("z","sa")
+out: 'lisa'
+
+methods - everything = object
+object have methods associated, depending on type. replace()-is used with string but cantbe used with lists. index()-can be used with both string and lists.
+
+append()-
+in: fam.append("me")
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86, "me"]
+in: fam.append(1.79)
+in: fam
+out: ['liz', 1.73, 'emma', 1.68, 'mom', 1.71, 'dad', 1.86, "me", 1.79]
+
+methods: call functions on objects
